@@ -1,19 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>My Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px 50px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    a {
+      display: block;
+      padding: 15px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      transform: translateY(-5px);
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      box-shadow: 0 10px 30px rgba(0, 114, 255, 0.5);
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 30px 25px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Welcome to My Website</h1>
+  <div class="container">
+    <h1>Welcome to My Website</h1>
 
-<ul>
-  <li><a href="Week1/personalInfo.html">Week 1 - Personal Info</a></li>
-  <li><a href="Week2/personalInfo.html">Week 2 - Personal Info</a></li>
-  <li><a href="Week3/">Week 3</a></li>
-  <li><a href="Week4/">Week 4</a></li>
-  <li><a href="Week5%20-%208/">Week 5 - 8</a></li>
-</ul>
+    <ul>
+      <li><a href="Week1/personalInfo.html">Week 1 – Personal Info</a></li>
+      <li><a href="Week2/personalInfo.html">Week 2 – Personal Info</a></li>
+      <li><a href="Week3/">Week 3</a></li>
+      <li><a href="Week4/">Week 4</a></li>
+      <li><a href="Week5%20-%208/">Week 5 – 8</a></li>
+    </ul>
+
+    <footer>
+      © 2025 • Designed By Hassan
+    </footer>
+  </div>
 
 </body>
 </html>
