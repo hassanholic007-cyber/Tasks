@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home</title>
-<link rel="stylesheet" href="Style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
-<h1>My Responsive Website</h1>
+  <h1>My Website</h1>
 </header>
+
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
+  <a href="#" onclick="loadPage('home')">Home</a>
+  <a href="#" onclick="loadPage('about')">About</a>
+  <a href="#" onclick="loadPage('contact')">Contact</a>
 </nav>
-<div class="container">
-<h2>Welcome to My Website</h2>
-<p class="dynamic-content">This is the home page. Click the buttons below to see JavaScript in action!</p>
 
+<div class="page-wrapper">
+  <div class="card">
 
-<button onclick="changeTheme()">Change Theme</button>
-<button onclick="changeBackgroundColor()">Change Background Color</button>
-<button onclick="updateContent()">Update Text Content</button>
+    <h2 id="section-title">Welcome</h2>
+    <p id="dynamic-content">
+      This is the home page. Customize your experience below.
+    </p>
+
+    <input type="text" id="textInput" placeholder="Edit welcome message">
+
+    <div class="buttons">
+      <button onclick="toggleTheme()">🌙 Toggle Theme</button>
+      <button onclick="setMood('calm')">Calm</button>
+      <button onclick="setMood('focus')">Focus</button>
+      <button onclick="setMood('energy')">Energy</button>
+      <button onclick="updateContent()">Update Text</button>
+      <button class="reset" onclick="resetPage()">Reset</button>
+    </div>
+
+  </div>
 </div>
+
+<footer>
+  <p>© 2025 Hassan Web Development</p>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
