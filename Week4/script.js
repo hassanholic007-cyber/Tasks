@@ -1,32 +1,60 @@
-function changeTheme() {
 const body = document.body;
-body.classList.toggle('dark-theme');
+const content = document.getElementById("dynamic-content");
 
+function toggleTheme() {
+  body.classList.toggle("dark-theme");
 
-const header = document.querySelector('header');
-const nav = document.querySelector('nav');
-
-
-if(body.classList.contains('dark-theme')) {
-header.style.backgroundColor = '#333';
-header.style.color = '#fff';
-nav.style.backgroundColor = '#555';
-alert('Dark theme activated!');
-} else {
-header.style.backgroundColor = '#007c91';
-header.style.color = '#fff';
-nav.style.backgroundColor = '#004d56';
-alert('Light theme activated!');
-}
+  const isDark = body.classList.contains("dark-theme");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 }
 
-function changeBackgroundColor() {
-const colors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff'];
-document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+function setMood(mood) {
+  const moods = {
+    calm: ["#caffbf", "Calm mode activated 🌿"],
+    focus: ["#a0c4ff", "Focus mode activated 🎯"],
+    energy: ["#ffadad", "Energy mode activated ⚡"]
+  };
+
+  body.style.backgroundColor = moods[mood][0];
+  content.textContent = moods[mood][1];
+
+  localStorage.setItem("bg", moods[mood][0]);
+  localStorage.setItem("text", moods[mood][1]);
 }
 
 function updateContent() {
-const content = document.querySelector('.dynamic-content');
-const messages = ['Hello World!', 'Welcome to my site!', 'JavaScript is fun!', 'Have a great day!'];
-content.textContent = messages[Math.floor(Math.random() * messages.length)];
+  const input = document.getElementById("textInput").value;
+  if (input.trim()) {
+    content.textContent = input;
+    localStorage.setItem("text", input);
+  }
 }
+
+function resetPage() {
+  localStorage.clear();
+  location.reload();
+}
+
+function loadPage(page) {
+  if (page === "home") {
+    content.textContent = "This is the home page. Customize your experience below.";
+  }
+  if (page === "about") {
+    content.textContent = "I am a web development intern learning modern UI design.";
+  }
+  if (page === "contact") {
+    content.textContent = "Email: hassan@example.com | Phone: 0000-0000000";
+  }
+}
+
+window.onload = () => {
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-theme");
+  }
+
+  const bg = localStorage.getItem("bg");
+  const text = localStorage.getItem("text");
+
+  if (bg) body.style.backgroundColor = bg;
+  if (text) content.textContent = text;
+};
